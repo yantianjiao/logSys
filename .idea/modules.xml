@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/logSys.iml" filepath="$PROJECT_DIR$/logSys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logSys-app/logSys-app.iml" filepath="$PROJECT_DIR$/logSys-app/logSys-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logSys-consumer/logSys-consumer.iml" filepath="$PROJECT_DIR$/logSys-consumer/logSys-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logSys-web/logSys-web.iml" filepath="$PROJECT_DIR$/logSys-web/logSys-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.logSys</groupId>
+    <artifactId>logSys</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>logSys-consumer</module>
+        <module>logSys-web</module>
+        <module>logSys-app</module>
+    </modules>
+    <properties>
+        <slf4j.version>1.7.21</slf4j.version>
+        <spring.version>4.3.8.RELEASE</spring.version>
+    </properties>
+
+</project>
