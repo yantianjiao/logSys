@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="logSys-web:war">
+    <output-path>$PROJECT_DIR$/logSys-web/target</output-path>
+    <root id="archive" name="logSys-web.war">
+      <element id="artifact" artifact-name="logSys-web:war exploded" />
+    </root>
+  </artifact>
+</component>

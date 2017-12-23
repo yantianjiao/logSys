@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="logSys-web2:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/logSys_web2_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="logSys-web2/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="logSys-web2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,147 @@
+BODY
+{/*ҳ����ʽ*/
+	scrollbar-face-color: #CFDBF1; /*���������ߵ���ɫ */
+	scrollbar-shadow-color: #CFDBF1; /*�����������Ӱ����ɫ */
+	scrollbar-highlight-color: #FFFFFF; /*�������հײ��ֵ���ɫ */
+	scrollbar-3dlight-color: #96AABD; /*���������ߵ���ɫ */
+	scrollbar-darkshadow-color: #96AABD; /*������ǿ��Ӱ����ɫ */
+	scrollbar-track-color: #CFDBF1; /*�������ı�����ɫ */
+	scrollbar-arrow-color: #000000;  /*���°�ť�����Ǽ�ͷ����ɫ */
+	overflow:auto;
+	margin-top:0px;
+	margin-left:10px;
+	margin-right:0px;
+	font-size:12px;
+}
+td
+{
+	font-size:12px;
+    color:#000000;
+}
+a:link {
+	color: #0433CC;
+	text-decoration: none;
+}
+a:visited {
+	color: #0433CC;
+	text-decoration: none;
+}
+a:hover {
+	color:#FC8709;
+}
+
+.ifSpan{
+	font-size:11pt;
+	font-weight:bold;
+	position:relative;color:green;
+	top:3px
+}
+.thenSpan{
+	font-size:11pt;
+	font-weight:bold;
+	position:relative;color:red;
+	top:3px
+}
+.conRow,.actRow{
+	min-height:30px;line-height:30px;padding-left:50px;
+	word-wrap:break-word;
+}
+.buttonRow{padding-left:50px;}
+.labelSpan{
+	position:relative;
+	top:5px;
+}
+.staticSpan{
+	position:relative;
+	top:5px;
+}
+.selectSpan{
+	position:relative;
+	top:5px;
+	cursor:pointer;
+	font-size:9pt;
+	margin-left:4px;
+	background: #F0F8FF;
+}
+.selectSpan:hover{text-decoration: underline;}
+.buttonSpan{
+	position:relative;
+	top:5px;color:blue;
+}
+.textSpan{
+	position:relative;
+	top:5px;
+	color: red;
+	background: #ECF2FC;
+}
+span.btnDelete{
+	width:8px;height:7px;display:inline-block;cursor:pointer;
+	background:url('icons/customed/delete.gif') no-repeat;
+}
+span.btnAdd{
+	background:url('icons/customed/add.gif') no-repeat;padding-left: 16px;
+	width:80px;height:16px;display:block;cursor:pointer;
+}
+span.btnAdd:hover{text-decoration: underline;}
+span.btnOk{
+	width:20px;height:15px;top: 8px;display:inline-block;cursor:pointer;
+	background:url('icons/customed/checkmark.png') no-repeat;
+}
+.input {
+background:#ffffff;
+border:1px solid #6F85AF;
+color: #000000;
+font-size:9pt;
+height: 16px;
+}
+.el-var{color:#008000}
+.el-opt{color:#FF0000}
+.el-edit{color:#C8C8C8}
+.el-inputVar{color:#FF0000}
+.el-numVar{color:#FF0064}
+
+.panel-box {
+	border: 1px solid #d4d4d4;
+	background-color: #F9FAFE;
+	margin: 20px;
+	padding: 10px;
+	position: relative;
+}
+
+.panel-box h4 {
+	background-color: #fff;
+	color: #000;
+	font-size: 15px;
+	font-weight: bold;
+	left: 20px;
+	margin: 0;
+	position: absolute;
+	top: -10px;
+}
+.codition-complex-item {
+	border-bottom: 1px dashed #ccc;position:relative;
+	line-height: 32px;
+	padding: 6px 6px 6px 164px;
+}
+.condition-group-item{
+	border-bottom: 1px dashed #ccc;position:relative;
+	line-height: 32px;
+	padding: 6px 6px 6px 164px;
+}
+.condition-option {
+	padding-bottom: 10px;
+	padding-left: 245px;
+	padding-top: 10px;
+}
+ul {
+	list-style: outside none none;padding:0px;
+}
+.logicoperator{margin-left:-28px;margin-right:4px}
+.sfield:hover{background-color:#00438a;color:#e6e6e6;border-radius:3px}
+.active{background-color:#00438a;color:#e6e6e6;border-radius:3px}
+#editorWrapper{margin-top:20px;margin-left:10px;height:5000px}
+#editorMain{border:none;position: relative;width:100%;}
+a.modelSelected:hover,.modelSelected{background-color: #69aff4;
+	border: 1px solid #ddd;
+	border-radius: 5px;padding:0px}
+a.modelSelected span{color:#fff}
