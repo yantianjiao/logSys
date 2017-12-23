@@ -7,25 +7,21 @@ import com.logSys.util.LogContext;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.Serializable;
 import java.net.InetAddress;
 
 @Service
-public class Slf4jLogger implements ILogger, Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Slf4jLogger implements ILogger{
 
     @Resource
     private TransporterService transporterService;
 
     @Override
-    public void info(String msg) {
+    public void info(String sid, String userId, String msg) {
         LogInfo info = LogContext.getContextLogInfo();
         if(info == null){
-            info = LogContext.begin(getLocalIp(),"","","");
+            info = LogContext.begin(getLocalIp(),userId,sid);
         }
         transporterService.invoke(info.toString() + msg);
-
     }
 
     /**
@@ -39,5 +35,10 @@ public class Slf4jLogger implements ILogger, Serializable {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public static void main(String[] args) {
+        ILogger logger = new Slf4jLogger();
+        logger.info("111","2222","name=zhangsan");
     }
 }

@@ -5,7 +5,7 @@ package com.logSys.command;
  * Created by ytj on 2017/12/20.
  */
 public enum CommandEnum {
-    EQUAL_OPER("=","相等"),
+    EQUAL_OPER("=","等于"),
     NOT_EQULA_OPER("!=","不等于");
     ;
     /** 操作 */

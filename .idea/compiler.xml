@@ -9,6 +9,7 @@
         <module name="logSys-app" />
         <module name="logSys-consumer" />
         <module name="logSys-web" />
+        <module name="logSysweb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,8 @@
       <module name="logSys-consumer" target="1.6" />
       <module name="logSys-query" target="1.5" />
       <module name="logSys-web" target="1.5" />
+      <module name="logSysweb" target="1.5" />
+      <module name="logSysweb2" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

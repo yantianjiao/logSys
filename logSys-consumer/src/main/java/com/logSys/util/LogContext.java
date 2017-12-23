@@ -16,16 +16,14 @@ public class LogContext {
      * @param clientIp  客户端IP
      * @param userId    当前用户ID
      * @param sid       当前登录sid
-     * @param urlOrMethod  当前方法或url(web)
      */
-    public static LogInfo begin(String clientIp,String userId,String sid,String urlOrMethod)
+    public static LogInfo begin(String clientIp,String userId,String sid)
     {
         LogInfo info =new LogInfo();
         info.setLogId(UUID.randomUUID().toString());
         info.setClientIp(clientIp);
         info.setSid(sid);
         info.setUserId(userId);
-        info.setUrl(urlOrMethod);
         info.setRecordTime(new Date().getTime());
         logThreadLocal.set(info);
         return info;

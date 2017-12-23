@@ -29,18 +29,10 @@ public class LogInfo {
      */
     private String sid;
 
-    /**
-     * 请求接口
-     */
-    private String url;
 
     @Override
     public String toString() {
-        long time = -1;
-        if (recordTime > 0) {
-            time = System.currentTimeMillis() - recordTime;
-        }
-        return logId + "|" + recordTime + "|" + userId + "|" + sid + "|" + url + "|" + time + "|";
+        return logId + "|" + recordTime +"|" + clientIp + "|" + userId + "|" + sid + "|";
     }
 
     public String getLogId() {
@@ -82,13 +74,5 @@ public class LogInfo {
 
     public void setSid(String sid) {
         this.sid = sid;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

@@ -1,4 +1,4 @@
-package com.logSys.bean;
+package com.logSys.domain;
 
 /**
  * Created by ytj on 2017/12/20.
@@ -18,6 +18,10 @@ public class LogInfo {
      * 日志发生记录时间
      */
     private long recordTime;
+    /**
+     * 日志发生记录时间
+     */
+    private String recordTimeString;
 
     /**
      * 用户ID 只有在用户登录方式请求时才有意义
@@ -28,11 +32,15 @@ public class LogInfo {
      * 用户登录标示
      */
     private String sid;
+    /**
+     * 日志内容
+     */
+    private String msg;
 
 
     @Override
     public String toString() {
-        return logId + "|" + recordTime + "|" + userId + "|" + sid + "|";
+        return logId + "|" + recordTime +"|" + clientIp + "|" + userId + "|" + sid + "|" + "|" + msg;
     }
 
     public String getLogId() {
@@ -60,6 +68,14 @@ public class LogInfo {
         this.recordTime = recordTime;
     }
 
+    public String getRecordTimeString() {
+        return recordTimeString;
+    }
+
+    public void setRecordTimeString(String recordTimeString) {
+        this.recordTimeString = recordTimeString;
+    }
+
     public String getUserId() {
         return userId;
     }
@@ -75,4 +91,13 @@ public class LogInfo {
     public void setSid(String sid) {
         this.sid = sid;
     }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
 }

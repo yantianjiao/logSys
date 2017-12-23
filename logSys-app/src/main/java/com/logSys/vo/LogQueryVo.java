@@ -1,38 +1,48 @@
 package com.logSys.vo;
 
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by ytj on 2017/12/19.
  */
 public class LogQueryVo extends BaseVo{
-    private int from;
-    private int to;
-    private String pathname;
+    private Date beginTime;
+    private Date endTime;
+    private String userId;
+    private String sid;
     private List<QueryConditionVo> conditions;
 
-    public int getFrom() {
-        return from;
+    public Date getBeginTime() {
+        return beginTime;
     }
 
-    public void setFrom(int from) {
-        this.from = from;
+    public void setBeginTime(Date beginTime) {
+        this.beginTime = beginTime;
     }
 
-    public int getTo() {
-        return to;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setTo(int to) {
-        this.to = to;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
-    public String getPathname() {
-        return pathname;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setPathname(String pathname) {
-        this.pathname = pathname;
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 
     public List<QueryConditionVo> getConditions() {

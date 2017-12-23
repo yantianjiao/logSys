@@ -1,15 +1,23 @@
 package com.logSys.controller;
 
+import com.logSys.command.CommandEnum;
 import com.logSys.service.QueryLog;
+import com.logSys.util.DateUtil;
 import com.logSys.vo.LogQueryVo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.logSys.vo.QueryConditionVo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ytj on 2017/12/21.
@@ -17,17 +25,25 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/logQuery")
 public class QueryController {
-    private static final Logger logger = LoggerFactory.getLogger(QueryController.class);
+    private static final Logger logger = LogManager.getLogger(QueryController.class);
+
     @Resource
     private QueryLog queryLog;
-    @RequestMapping(value = "query", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/logList", method = RequestMethod.GET)
+    public String logList() {
+        return "/logList";
+    }
+
+    @RequestMapping(value = "/query", method = RequestMethod.POST)
     @ResponseBody
-    public Object save(LogQueryVo vo){
+    public Object save(HttpServletRequest request){
         try {
-            verify(vo);
-            return queryLog.queryLog(vo);
+            LogQueryVo logQueryVo = getLogQueryVo(request);
+            verify(logQueryVo);
+            return queryLog.queryLog(logQueryVo);
         }catch (Exception e){
-            logger.error("save error,vo={}",vo,e);
+            logger.error("save error,msg",e);
             return e.getMessage();
         }
     }
@@ -39,6 +55,37 @@ public class QueryController {
             throw new Exception("请选择开始时间和结束时间");
         }
         return true;
+    }
+    private static String decode(String msg){
+        try {
+            return URLDecoder.decode(msg,"UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            logger.error("decode error,msg={}",msg);
+        }
+        return "";
+    }
+    private LogQueryVo getLogQueryVo(HttpServletRequest request){
+        LogQueryVo logQueryVo = new LogQueryVo();
+        logQueryVo.setUserId(request.getParameter("userId"));
+        logQueryVo.setSid(request.getParameter("sid"));
+        logQueryVo.setBeginTime(DateUtil.stringToDate(request.getParameter("beginTime")));
+        logQueryVo.setEndTime(DateUtil.stringToDate(request.getParameter("endtime")));
+        logQueryVo.setConditions(getQueryConditionVo(request));
+        return logQueryVo;
+    }
+    private List<QueryConditionVo> getQueryConditionVo(HttpServletRequest request){
+        QueryConditionVo queryConditionVo = new QueryConditionVo();
+        queryConditionVo.setTargetValue(request.getParameter("conditionValue"));
+        queryConditionVo.setCommand(getCommandEnum(request.getParameter("conditionCommand")));
+        List<QueryConditionVo> result = new ArrayList<QueryConditionVo>();
+        result.add(queryConditionVo);
+        return result;
+    }
+    private CommandEnum getCommandEnum(String conditionCommand){
+        if(CommandEnum.EQUAL_OPER.getMsg().equals(conditionCommand)){
+            return CommandEnum.EQUAL_OPER;
+        }
+        return CommandEnum.NOT_EQULA_OPER;
     }
 
 }

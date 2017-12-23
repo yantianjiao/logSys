@@ -7,14 +7,14 @@ import java.util.List;
  */
 public class LogReaderDomain extends BaseDomain {
 
-    private List<String> content;
+    private List<LogInfo> content;
     private boolean finished;
 
-    public List<String> getContent() {
+    public List<LogInfo> getContent() {
         return content;
     }
 
-    public void setContent(List<String> content) {
+    public void setContent(List<LogInfo> content) {
         this.content = content;
     }
 
