@@ -17,6 +17,10 @@ public class DateUtil {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(strFormat);
         return simpleDateFormat.format(new Date(time));
     }
+    public final static String dateToString(Date date,String strFormat){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(strFormat);
+        return simpleDateFormat.format(date);
+    }
     /**
      * string2Date:(日期字符转Date). <br/>
      *
@@ -26,7 +30,7 @@ public class DateUtil {
      */
     public final static Date stringToDate(String dateString) {
         if (dateString == null || dateString.trim().length() == 0) {
-            return new Date(0);
+            return null;
         }
 
         try {
